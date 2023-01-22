@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>House price prediction APP </h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="date" placeholder="Date" required="required" />
+      <input type="text" name="bedrooms" placeholder="Bedrooms" required="required" />
+		  <input type="text" name="bathrooms" placeholder="Bathrooms" required="required" />
+      <input type="text" name="sqft_living" placeholder="Square feet house" required="required" />
+      <input type="text" name="sqft_lot" placeholder="Square feet plot" required="required" />
+		  <input type="text" name="floors" placeholder="Number of floors" required="required" />
+      <input type="text" name="waterfront" placeholder="Wave front" required="required" />
+      <input type="text" name="view" placeholder="View" required="required" />
+		  <input type="text" name="condition" placeholder="Condition" required="required" />
+      <input type="text" name="grade" placeholder="grade" required="required" />
+      <input type="text" name="sqft_above" placeholder="Sqft Above required="required" />
+		  <input type="text" name="sqft_basement" placeholder="Sqft basement" required="required" />
+      <input type="text" name="yr_built" placeholder="Built in year" required="required" />
+		  <input type="text" name="yr_renovated" placeholder="Renovated in year" required="required" />
+      <input type="text" name="zipcode" placeholder="PINCODE" required="required" />
+      <input type="text" name="lat" placeholder="Latitude" required="required" />
+      <input type="text" name="long" placeholder="longitude" required="required" />
+		  <input type="text" name="sqft_living15" placeholder="Square feet living15" required="required" />
+      <input type="text" name="sqft_lot15" placeholder="Sqft plot15" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
